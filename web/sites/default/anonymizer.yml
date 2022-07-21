@@ -1,0 +1,3 @@
+---
+extends: 'drupal8'
+version: '8.8.6'

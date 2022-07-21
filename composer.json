@@ -1,0 +1,121 @@
+{
+    "name": "mh/drupal-project-template",
+    "type": "project",
+    "description": "Template for MH Drupal projects.",
+    "license": "GPL-2.0+",
+    "require": {
+        "composer/installers": "^2.0",
+        "cweagans/composer-patches": "^1.7",
+        "mh/drupal-core-package": "dev-main",
+        "wikimedia/composer-merge-plugin": "^2.0"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "config": {
+        "bin-dir": "bin",
+        "discard-changes": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "wikimedia/composer-merge-plugin": true,
+            "composer/installers": true,
+            "drupal/core-project-message": true,
+            "drupal/core-composer-scaffold": true,
+            "cweagans/composer-patches": true,
+            "simplesamlphp/composer-module-installer": true,
+            "oomphinc/composer-installers-extender": true
+        }
+    },
+    "extra": {
+        "patches": {},
+        "enable-patching": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/webform/composer.libraries.json"
+            ],
+            "recurse": false,
+            "replace": false,
+            "merge-extra": false
+        },
+        "installer-types": [
+            "drupal-custom-configuration",
+            "drupal-custom-modules",
+            "drupal-custom-patches",
+            "drupal-library"
+        ],
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/modules/mh": [
+                "type:drupal-custom-modules"
+            ],
+            "patches/mh": [
+                "type:drupal-custom-patches"
+            ],
+            "conf": [
+                "type:drupal-custom-configuration"
+            ]
+        },
+        "scripts-dev": {}
+    },
+    "autoload": {},
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.moet-hennessy.net:mhis/dynamic/agency/drupal-common/drupal-composer.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.moet-hennessy.net:mhis/dynamic/agency/drupal-common/drupal-configs.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.moet-hennessy.net:mhis/dynamic/agency/drupal-common/drupal-patches.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.moet-hennessy.net:mhis/dynamic/agency/drupal-common/drupal-custom-modules.git"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {}
+}
