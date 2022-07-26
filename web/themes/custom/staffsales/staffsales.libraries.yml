@@ -1,0 +1,14 @@
+#'theme' below is called 'style type', affect the ordering of css loading
+#see SMACSS in https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module
+all-pages:
+  css:
+    theme:
+      css/style.css: {}
+  dependencies:
+    - core/jquery
+
+staffsales-admin-metafield:
+  js:
+    js/admin-metafield.js: {}
+#  dependencies:
+#    - core/jquery.ui.datepicker

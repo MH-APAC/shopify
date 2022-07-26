@@ -1,0 +1,12 @@
+services:
+  staffsales_access.verifier:
+    class: Drupal\staffsales_access\StaffsalesAccessVerifier
+    arguments:
+      - '@config.factory'
+  staffsales_access.middleware:
+    class: Drupal\staffsales_access\StaffsalesAccessMiddleware
+    arguments:
+      - '@staffsales_access.verifier'
+    tags:
+      # Exec before page caching, note that we couldn't get AccountProxy due to the priority
+      - { name: http_middleware, priority: 250 }

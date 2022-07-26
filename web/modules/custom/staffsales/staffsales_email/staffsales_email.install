@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function staffsales_email_schema() {
+  $schema['staffsales_email'] = [
+    'description' => 'Email list for staffsales_email',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique ID',
+      ],
+      'email' => [
+        'type' => 'varchar',
+        'length' => 150,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Email',
+      ],
+      'shop' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+        'description' => 'Shop allowed for this email, 0 - yearround_sales, 1 - seasonal_sales',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'shop_email' => ['shop', 'email'],
+    ],
+  ];
+
+  $schema['staffsales_email_role'] = [
+    'description' => 'Role list for staffsales_email',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique ID',
+      ],
+      'email' => [
+        'type' => 'varchar',
+        'length' => 150,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Email',
+      ],
+      'role' => [
+        'type' => 'varchar',
+        'length' => 15,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Role of this staff',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'role_email' => ['role', 'email'],
+    ],
+  ];
+
+  return $schema;
+}

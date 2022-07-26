@@ -1,0 +1,6 @@
+name: Emails for Site access and Price Tier
+description: Manage email access and role
+package: StaffSales
+type: module
+core_version_requirement: ^9 || ^10
+version: 1.0

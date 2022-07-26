@@ -1,0 +1,67 @@
+body{
+  padding: 1em;
+  font-size: 14px;
+  font-family: Verdana,Tahoma,Segoe,sans-serif;
+  background-color: #f4f6f8;
+  color: #000;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+}
+
+h1{
+  font-weight: normal;
+}
+
+.region{
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form{
+  .form-item{
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    &.form-type-checkbox .description{
+      margin-left: 1.5em;
+      width: 80%;
+    }
+
+    &.form-type-textfield > label{
+      display: inline-block;
+      width: 250px;
+    }
+
+    legend{
+      font-weight: bold;
+    }
+
+    label{
+      & + .form-textarea-wrapper{
+        margin-top: 0.5em;
+      }
+
+      & + .form-text{
+        max-width: 300px;
+      }
+    }
+    .description{
+      color: #777;
+    }
+
+    input[type="checkbox"]{
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  button, input[type="button"],
+  input[type="reset"], input[type="submit"]{
+    padding: 0.5em;
+    margin: 0;
+  }
+
+}

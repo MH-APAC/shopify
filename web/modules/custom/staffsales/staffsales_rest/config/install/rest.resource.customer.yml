@@ -1,0 +1,23 @@
+# there is a new format for multiple methods definition:
+# https://www.drupal.org/project/drupal/issues/2721595
+# you must uninstall and install this module again for server to reload this file
+# if you have multiple supported_formats, ?_format=<format_name> is required in URL
+# otherwise it will throw 406 Not Acceptable
+# ref: https://drupal.stackexchange.com/questions/258823/drupal-8-5-rest-406-not-acceptable
+# ref: https://www.drupal.org/node/2954953
+id: customer_rest_resource
+plugin_id: customer_rest_resource
+granularity: method
+status: true
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - staffsales_rest
+  POST:
+    supported_formats:
+      - json
+      - form
+    supported_auth:
+      - staffsales_rest

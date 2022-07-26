@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\Core\Render\Markup;
+
+/*
+ * Implementation of hook_mail()
+ * Sample email templates located in templates/swiftmailer.html.twig
+ * Copy it to themes/templates folder
+ * In future, we should use swiftmailer--staffsales_queue--over_purchase_order.html.twig instead
+ */
+function staffsales_queue_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'over_purchase_order':
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8;';//is it required?  or config in swiftmailer admin?
+      $message['subject'] = 'Over purchase notification from MHDHK private store[Order Number: '.$params['order_number'].']';
+
+      $text[] = '<p>This order may needs your attention: </p>';
+      $text[] = '<p>';
+      $text[] = 'Order Number: '.$params['order_number'].'<br>';
+      $text[] = 'Name: '.$params['first_name'].' '.$params['last_name'].'<br>';
+      $text[] = 'Email: '.$params['email'].'<br>';
+      $text[] = 'Amount: $'.$params['total_price'].'<br>';
+      $text[] = 'Quantity: '.$params['total_quantity'].'<br>';
+      $text[] = '</p>';
+
+      $text[] = '<p>Order details:</p>';
+      $text[] = '<table border="0" cellpadding="5", cellspacing="5">';
+      $text[] = '<tr><th>Item</th><th>Quantity</th></tr>';
+      foreach($params['line_items'] as $i => $j){
+        $text[] = '<tr><td>'.$j['title'].'</td><td>'.$j['quantity'].'</td></tr>';
+      }
+
+      $message['body'] = array_map(function ($text) {
+        return Markup::create($text);
+      }, $text);
+
+      break;
+  }
+}

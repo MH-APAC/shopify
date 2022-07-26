@@ -1,0 +1,9 @@
+staffsales.dashboard:
+  path: '/shopify-admin'
+  defaults:
+    _controller: '\Drupal\staffsales_dashboard\Controller\DashboardController::index'
+    _title: 'Staffsales Dashboard'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE

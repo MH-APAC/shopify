@@ -1,0 +1,6 @@
+name: Staffsales Dashboard
+description: Dashboard page
+package: StaffSales
+type: module
+core_version_requirement: ^9 || ^10
+version: 1.0

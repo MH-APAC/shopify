@@ -1,0 +1,8 @@
+name: Staffsales Metafield
+description: Manage Shopify Metafield
+package: StaffSales
+type: module
+version: 1.0
+core_version_requirement: ^9 || ^10
+dependencies:
+  - staffsales_shopify

@@ -1,0 +1,44 @@
+body {
+  padding: 1em;
+  font-size: 14px;
+  font-family: Verdana,Tahoma,Segoe,sans-serif;
+  background-color: #f4f6f8;
+  color: #000; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; }
+
+h1 {
+  font-weight: normal; }
+
+.region {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto; }
+
+form .form-item {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+  form .form-item.form-type-checkbox .description {
+    margin-left: 1.5em;
+    width: 80%; }
+  form .form-item.form-type-textfield > label {
+    display: inline-block;
+    width: 250px; }
+  form .form-item legend {
+    font-weight: bold; }
+  form .form-item label + .form-textarea-wrapper {
+    margin-top: 0.5em; }
+  form .form-item label + .form-text {
+    max-width: 300px; }
+  form .form-item .description {
+    color: #777; }
+  form .form-item input[type="checkbox"] {
+    width: 13px;
+    height: 13px; }
+form button, form input[type="button"],
+form input[type="reset"], form input[type="submit"] {
+  padding: 0.5em;
+  margin: 0; }
+
+/*# sourceMappingURL=style.css.map */

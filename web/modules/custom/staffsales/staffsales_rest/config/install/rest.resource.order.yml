@@ -1,0 +1,16 @@
+id: order_rest_resource
+plugin_id: order_rest_resource
+granularity: method
+status: true
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - staffsales_rest
+  POST:
+    supported_formats:
+      - json
+      - form
+    supported_auth:
+      - staffsales_rest
