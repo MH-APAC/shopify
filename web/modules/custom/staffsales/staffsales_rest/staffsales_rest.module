@@ -1,0 +1,27 @@
+<?php
+
+use Drupal\Core\Render\Markup;
+
+/*
+ * Implementation of hook_mail()
+ * Sample email templates located in templates/swiftmailer.html.twig
+ * Copy it to themes/templates folder
+ * In future, we should use swiftmailer--staffsales_rest--passcode.html.twig instead
+ */
+function staffsales_rest_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'passcode':
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8;';//is it required?  or config in swiftmailer admin?
+      $message['subject'] = 'Your passcode for Moët Hennessy Vietnam store';
+
+      $text[] = '<p>You have attempted to login to the private store.  Please use the following one time passcode: </p>';
+      $text[] = '<h1 style="text-align: center;">'.$params['passcode'].'</h1>';
+      $text[] = '<p>If you didn\'t request this action or if you believe an unauthorized person trying to access your account, please reset your account password immediately.</p>';
+
+      $message['body'] = array_map(function ($text) {
+        return Markup::create($text);
+      }, $text);
+
+      break;
+  }
+}

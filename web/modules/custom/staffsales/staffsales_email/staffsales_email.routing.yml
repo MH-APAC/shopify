@@ -1,0 +1,9 @@
+staffsales.email:
+  path: '/shopify-admin/email'
+  defaults:
+    _controller: '\Drupal\staffsales_email\Controller\EmailAdminController::index'
+    _title: 'Emails for Site access and Price Tier'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE

@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function staffsales_domain_schema() {
+  $schema['staffsales_domain'] = [
+    'description' => 'Domain list for staffsales_domain',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique ID',
+      ],
+      'domain' => [
+        'type' => 'varchar',
+        'length' => 150,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Domain name',
+      ],
+      'shop' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+        'description' => 'Shop allowed for this domain, 0 - yearround_sales, 1 - seasonal_sales',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'shop_domain' => ['shop', 'domain'],
+    ],
+  ];
+
+  return $schema;
+}

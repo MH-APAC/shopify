@@ -1,0 +1,15 @@
+shopify-app-bridge-index:
+  version: 0.8.2
+  header: true
+  js:
+    https://unpkg.com/@shopify/app-bridge@0.8.2/index.js: { type: external, minified: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+shopify-app-bridge-action:
+  version: 0.8.2
+  header: true
+  js:
+    https://unpkg.com/@shopify/app-bridge@0.8.2/actions.js: { type: external, minified: true }
+  dependencies:
+    - staffsales_dashboard/shopify-app-bridge-index

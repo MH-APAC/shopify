@@ -1,0 +1,10 @@
+staffsales_shopify.settings:
+  type: config_object
+  label: 'Shopify additional config'
+  mapping:
+    shopify_access_token:
+      type: string
+      label: 'Access token for installed app'
+    shopify_webhook_secret:
+      type: string
+      label: 'Secret key for webhook configured in Shopify admin'

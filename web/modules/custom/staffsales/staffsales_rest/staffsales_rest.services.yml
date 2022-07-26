@@ -1,0 +1,19 @@
+services:
+  staffsales_rest.authentication.rest_auth:
+    class: Drupal\staffsales_rest\Authentication\Provider\RESTAuth
+    arguments: ['@entity_type.manager']
+    tags:
+      #priority of authentication_provider
+      #basic_auth default is 100
+      #cookie default is 0
+      #A higher number will be used over a lower number
+      - { name: authentication_provider, provider_id: 'staffsales_rest', priority: 101 }
+  staffsales_rest.middleware:
+    class: Drupal\staffsales_rest\StaffsalesRestMiddleware
+    tags:
+      # Exec before staffsales_access
+      - { name: http_middleware, priority: 270 }
+  staffsales_rest.encoder.form:
+    class: Drupal\staffsales_rest\Encoder\FormEncoder
+    tags:
+      - { name: encoder, format: form }

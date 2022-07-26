@@ -1,0 +1,9 @@
+staffsales_access.admin_page:
+  path: '/admin/config/staffsales_access'
+  defaults:
+    _title: 'Allowed IP Address'
+    _form: '\Drupal\staffsales_access\Form\ConfigForm'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: 'true'

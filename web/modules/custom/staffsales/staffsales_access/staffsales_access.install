@@ -1,0 +1,5 @@
+<?php
+
+function staffsales_access_uninstall() {
+  \Drupal::configFactory()->getEditable('staffsales_access.settings')->delete();
+}

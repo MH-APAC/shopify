@@ -1,0 +1,6 @@
+staffsales_access.admin_page:
+  title: 'Staffsales Access'
+  route_name: staffsales_access.admin_page
+  description: 'Allowed IP Address'
+  parent: user.admin_index
+  weight: 99

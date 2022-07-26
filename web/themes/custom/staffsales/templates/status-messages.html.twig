@@ -1,0 +1,8 @@
+{% extends "@classy/misc/status-messages.html.twig" %}
+{% block messages %}
+  {% if message_list is not empty %}
+    <div class="messages_wrapper">
+      {{ parent() }}
+    </div>
+  {% endif %}
+{% endblock messages %}

@@ -1,0 +1,10 @@
+# remember to enable anonymous access of this REST in /admin/people/permissions
+name: Staffsales REST
+description: Provide REST service for staffsales
+package: StaffSales
+type: module
+core_version_requirement: ^9 || ^10
+version: 1.0
+dependencies:
+  - rest #rest module is required in order for custom rest service to work
+  - swiftmailer

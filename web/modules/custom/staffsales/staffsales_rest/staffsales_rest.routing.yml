@@ -1,0 +1,7 @@
+staffsales_rest.4xx:
+  path: '/system/4xx'
+  defaults:
+    _controller: '\Drupal\staffsales_rest\Controller\Http4xxController:on4xx'
+    _title: 'Client error'
+  requirements:
+    _access: 'TRUE'

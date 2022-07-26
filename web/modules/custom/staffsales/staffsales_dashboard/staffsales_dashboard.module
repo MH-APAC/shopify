@@ -1,0 +1,9 @@
+<?php
+
+function staffsales_dashboard_theme($existing, $type, $theme, $path) {
+  return [
+    'index_template' => [
+      'variables' => ['test_var' => NULL],
+    ],
+  ];
+}

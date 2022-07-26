@@ -1,0 +1,47 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Shopify\PublicApp;
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ */
+function staffsales_shopify_form_shopify_api_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $config = \Drupal::configFactory()->getEditable('staffsales_shopify.settings');
+  $shopify_webhook_secret = $config->get('shopify_webhook_secret');
+
+  $form['connection']['shopify_webhook_secret'] = [
+    '#type' => 'textfield',
+    '#title' => 'Webhook secret',
+    '#default_value' => $shopify_webhook_secret,
+    '#attributes' => ['autocomplete' => 'off'],
+  ];
+
+  $form['#validate'] = array('_staffsales_shopify_form_shopify_api_admin_validate');
+  $form['connection']['password']['#required'] = FALSE;//not needed for Shopify Partner App
+  $form['#validate'][] = '_staffsales_shopify_form_shopify_api_admin_submit';
+}
+
+function _staffsales_shopify_form_shopify_api_admin_validate(array &$form, FormStateInterface $form_state) {
+  $config = \Drupal::service('config.factory')->get('staffsales_shopify.settings');
+  $shopify_access_token = $config->get('shopify_access_token');
+
+  //we couldn't verify anything as shopify access_token may not exist yet, this is only nice to have
+  if($shopify_access_token){
+    try {
+      $client = new PublicApp($form_state->getValue('domain'), $form_state->getValue('api_key'), $form_state->getValue('shared_secret'));
+      $client->setAccessToken($shopify_access_token);
+      $shop_info = $client->getShopInfo();
+      \Drupal::messenger()->addMessage('Successfully connected to '.$shop_info->name);
+    } catch (\Exception $e) {
+      \Drupal::messenger()->addError('API Error: ' . $e->getMessage());
+    }
+  }
+}
+
+function _staffsales_shopify_form_shopify_api_admin_submit(array &$form, FormStateInterface $form_state) {
+  $shopify_webhook_secret = $form_state->getValue('shopify_webhook_secret');
+  \Drupal::service('config.factory')->getEditable('staffsales_shopify.settings')
+    ->set('shopify_webhook_secret', $shopify_webhook_secret)
+    ->save();
+}

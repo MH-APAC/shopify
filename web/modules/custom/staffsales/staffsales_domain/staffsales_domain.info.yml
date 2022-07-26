@@ -1,0 +1,6 @@
+name: Domains for Site access and Price Tier
+description: Manage domain access
+package: StaffSales
+type: module
+core_version_requirement: ^9 || ^10
+version: 1.0

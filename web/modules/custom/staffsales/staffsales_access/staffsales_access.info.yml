@@ -1,0 +1,16 @@
+# Primary functions of this module
+# - Restrict anymore access to this website, only whitelist IP are allowed
+# - If shopify shop owner installed this partner app, allow access to this site
+#   by validating hmac signature
+# - Allow the iframe embed from shopify admin by removing X-Frame-Options HTTP header
+# - Whitelist IP won't check unless there is IP configured in /admin/config/staffsales_access
+#
+name: Staffsales Access
+description: Restrict access to this website
+package: StaffSales
+type: module
+core_version_requirement: ^9 || ^10
+version: 1.0
+dependencies:
+  - staffsales_shopify
+  - staffsales_dashboard

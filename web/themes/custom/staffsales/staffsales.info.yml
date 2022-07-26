@@ -1,0 +1,8 @@
+name: staffsales
+type: theme
+description: 'staffsales'
+core_version_requirement: ^9 || ^10
+version: 1.0
+base theme: classy
+libraries:
+  - staffsales/all-pages

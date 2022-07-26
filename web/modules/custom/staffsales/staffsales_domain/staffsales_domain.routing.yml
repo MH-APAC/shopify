@@ -1,0 +1,9 @@
+staffsales.domain:
+  path: '/shopify-admin/domain'
+  defaults:
+    _controller: '\Drupal\staffsales_domain\Controller\DomainAdminController::index'
+    _title: 'Domains for Site access and Price Tier'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
