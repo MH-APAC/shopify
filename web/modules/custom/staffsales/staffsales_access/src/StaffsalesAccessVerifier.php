@@ -68,13 +68,13 @@ class StaffsalesAccessVerifier implements StaffsalesAccessVerifierInterface {
     $ip_addresses = $request->getClientIps();
     $hmac = $request->query->get('hmac');
     $allowed_ip = $this->config->get('allowed_ip');
-    $allowed_ip = trim($allowed_ip);
 
     //we only start blocking if admin has configured whitelist IP
     if($is_cli || empty($allowed_ip)){
       $blocked = FALSE;
     }
 
+    $allowed_ip = trim($allowed_ip);
     if($allowed_ip) {
       $allowed_ip = preg_split("/\r\n|\n|\r/", $allowed_ip);
       $allowed_ip = array_map('trim', $allowed_ip);
