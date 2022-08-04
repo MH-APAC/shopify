@@ -557,7 +557,7 @@ class EmailAdminForm extends FormBase {
       ->orderBy('t.email');
     $emails = $query->execute()->fetchAll();
 
-    foreach ($emails as $i => $j) {
+    foreach ($emails as $j) {
       switch ($j->shop) {
         case self::SHOP_YEAR_ROUND:
           $yearround = TRUE;
