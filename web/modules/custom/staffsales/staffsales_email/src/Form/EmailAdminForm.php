@@ -178,7 +178,6 @@ class EmailAdminForm extends FormBase {
     $yearround_emails4 = $form_state->getValue('yearround_emails4');
     $yearround_emails5 = $form_state->getValue('yearround_emails5');
     $yearround_emails6 = $form_state->getValue('yearround_emails6');
-    $yearround_emailss = $form_state->getValue('yearround_emailss');
     $seasonal_emails = $form_state->getValue('seasonal_emails');
     $vip_emails = $form_state->getValue('vip_emails');
     $vip_emails2 = $form_state->getValue('vip_emails2');
