@@ -447,7 +447,7 @@ class EmailAdminForm extends FormBase {
     $emails = $query->execute()->fetchAll();
 
     //split the email list
-    foreach ($emails as $i => $j) {
+    foreach ($emails as $j) {
       switch ($j->shop) {
         case self::SHOP_YEAR_ROUND:
           $yearround_emails[] = $j->email;
