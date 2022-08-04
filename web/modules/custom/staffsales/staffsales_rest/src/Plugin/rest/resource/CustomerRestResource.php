@@ -344,9 +344,7 @@ class CustomerRestResource extends RestResourceBase {
 
 
     if(!empty($seasonal_enabled)) {
-      if (in_array($email_domain, $seasonal_domains)) {
-        $is_allow = TRUE;
-      } elseif (in_array($email, $seasonal_emails) || in_array($email, $vip_emailss)) {
+      if (in_array($email_domain, $seasonal_domains) || in_array($email, $seasonal_emails) || in_array($email, $vip_emailss)) {
         $is_allow = TRUE;
       }
     }
