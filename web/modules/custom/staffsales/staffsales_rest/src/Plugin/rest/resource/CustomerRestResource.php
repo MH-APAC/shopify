@@ -55,7 +55,7 @@ class CustomerRestResource extends RestResourceBase {
     $email = isset($data['email']) ? $data['email'] : NULL;
     $email = trim($email);
     $email = strtolower($email);
-    $password = isset($data['password']) ? $data['password'] : NULL;//password cannot be blank
+    $password = isset($data['password']) ? $data['password'] : NULL;
 
     if (!empty($op)) {
       switch ($op) {
