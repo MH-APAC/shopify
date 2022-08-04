@@ -400,7 +400,7 @@ class CustomerRestResource extends RestResourceBase {
         }
       }
     } catch (ClientException $e) {
-      $error_messages = $this->getError($e);
+      $this->getError($e);
     }
 
     return $has_account;
