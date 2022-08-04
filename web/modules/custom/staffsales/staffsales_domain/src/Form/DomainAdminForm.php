@@ -33,7 +33,7 @@ class DomainAdminForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $domains = self::getAllDomains();
+    $domains = static::getAllDomains();
     $yearround_domains = $domains['yearround_domains'];
     $yearround_domains2 = $domains['yearround_domains2'];
     $yearround_domains3 = $domains['yearround_domains3'];

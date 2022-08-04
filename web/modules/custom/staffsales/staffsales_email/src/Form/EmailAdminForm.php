@@ -33,7 +33,7 @@ class EmailAdminForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $emails = self::getAllEmails();
+    $emails = static::getAllEmails();
     $yearround_emails = $emails['yearround_emails'];
     $yearround_emails2 = $emails['yearround_emails2'];
     $yearround_emails3 = $emails['yearround_emails3'];
