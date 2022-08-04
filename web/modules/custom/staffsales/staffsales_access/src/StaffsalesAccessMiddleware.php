@@ -52,13 +52,10 @@ class StaffsalesAccessMiddleware implements HttpKernelInterface {
     $skip = $request->attributes->get('StaffsalesAccessMiddleware_skip_handle');
     $handle = TRUE;
 
-    if(!$skip){
-      //resume our checking
-      if($this->staffsalesAccessVerifier->isBlocked($request)){
+    if(!$skip && $this->staffsalesAccessVerifier->isBlocked($request)){
         //we don't show anything, don't let user to guess what framework we are using
         $response = new Response('403 Forbidden', 403);
         $handle = FALSE;
-      }
     }
 
     if($handle){
