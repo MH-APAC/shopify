@@ -222,7 +222,7 @@ class QuotaAdminForm extends FormBase {
             'value_type' => $type,
           ],
         ];
-        $r = $shopify->post('metafields', $data);
+        $shopify->post('metafields', $data);
       }
 
       \Drupal::messenger()->addMessage('Updated successfully');
