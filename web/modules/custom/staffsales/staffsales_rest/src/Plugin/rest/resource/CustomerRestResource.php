@@ -361,17 +361,17 @@ class CustomerRestResource extends RestResourceBase {
       $is_allow = TRUE;
     }elseif(in_array($email_domain, $yearround_domains6)) {
       $is_allow = TRUE;
-    }elseif(in_array($email, $yearround_emails) or in_array($email, $vip_emails)) {
+    }elseif(in_array($email, $yearround_emails) || in_array($email, $vip_emails)) {
       $is_allow = TRUE;
-    }elseif(in_array($email, $yearround_emails2) or in_array($email, $vip_emails2)) {
+    }elseif(in_array($email, $yearround_emails2) || in_array($email, $vip_emails2)) {
       $is_allow = TRUE;
-    }elseif(in_array($email, $yearround_emails3) or in_array($email, $vip_emails3)) {
+    }elseif(in_array($email, $yearround_emails3) || in_array($email, $vip_emails3)) {
       $is_allow = TRUE;
-    }elseif(in_array($email, $yearround_emails4) or in_array($email, $vip_emails4)) {
+    }elseif(in_array($email, $yearround_emails4) || in_array($email, $vip_emails4)) {
       $is_allow = TRUE;
-    }elseif(in_array($email, $yearround_emails5) or in_array($email, $vip_emails5)) {
+    }elseif(in_array($email, $yearround_emails5) || in_array($email, $vip_emails5)) {
       $is_allow = TRUE;
-    }elseif(in_array($email, $yearround_emails6) or in_array($email, $vip_emails6)) {
+    }elseif(in_array($email, $yearround_emails6) || in_array($email, $vip_emails6)) {
       $is_allow = TRUE;
     }
     return $is_allow;
