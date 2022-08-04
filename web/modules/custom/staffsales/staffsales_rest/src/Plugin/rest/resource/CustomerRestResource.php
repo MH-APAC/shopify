@@ -22,7 +22,7 @@ use \Shopify\ClientException;
  *   label = @Translation("CustomerRestResource"),
  *   uri_paths = {
  *     "canonical" = "/api/v1/customer",
- *     "https://www.drupal.org/link-relations/create" = "/api/v1/customer"
+ *     "create" = "/api/v1/customer"
  *   }
  * )
  */
