@@ -283,7 +283,7 @@ class CustomerRestResource extends RestResourceBase {
 
     try {
       $db = Database::getConnection();
-      $query = $db->insert('staffsales_passcode')
+      $db->insert('staffsales_passcode')
         ->fields([
           'email' => $email,
           'passcode' => $passcode,
