@@ -195,8 +195,10 @@ class CustomerRestResource extends RestResourceBase {
     }
 
     $data = [];
-    $data['success'] = $success;//REST executed without error
-    $data['status'] = $status;//Customer tags modified
+    //REST executed without error
+    $data['success'] = $success;
+    //Customer tags modified
+    $data['status'] = $status;
     $data['errors'] = $error_messages;
 
     return $this->noCacheResponse($data);
