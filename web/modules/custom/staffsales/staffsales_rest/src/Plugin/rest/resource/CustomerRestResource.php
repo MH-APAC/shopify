@@ -390,7 +390,7 @@ class CustomerRestResource extends RestResourceBase {
     try {
       $r = $shopify->get('customers/search', $opts);
       if ($r->customers) {
-        foreach ($r->customers as $i => $j) {
+        foreach ($r->customers as $j) {
           if ($j->email == $email) {
             if($j->state == 'enabled'){
               $has_account = TRUE;
