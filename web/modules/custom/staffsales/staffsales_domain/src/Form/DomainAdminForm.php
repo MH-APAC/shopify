@@ -359,7 +359,7 @@ class DomainAdminForm extends FormBase {
     $domains = $query->execute()->fetchAll();
 
     //split the domain list
-    foreach ($domains as $i => $j) {
+    foreach ($domains as $j) {
       switch ($j->shop) {
         case self::SHOP_YEAR_ROUND:
           $yearround_domains[] = $j->domain;
