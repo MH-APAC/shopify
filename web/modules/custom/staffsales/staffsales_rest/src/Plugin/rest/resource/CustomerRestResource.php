@@ -410,7 +410,7 @@ class CustomerRestResource extends RestResourceBase {
   /**
    * https://stackoverflow.com/questions/4356289/php-random-string-generator/31107425#31107425
    */
-  function genPasscode($length, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
+  private function genPasscode($length, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
     $pieces = [];
     $max = mb_strlen($keyspace, '8bit') - 1;
     for ($i = 0; $i < $length; ++$i) {
