@@ -615,7 +615,7 @@ class EmailAdminForm extends FormBase {
     if (!empty($emails)) {
       $emails = preg_split("/\r\n|\n|\r/", $emails);
       $emails = array_map('trim', $emails);
-      $emails = array_filter($emails);//empty line
+      $emails = array_filter($emails);
       $emails = array_map('strtolower', $emails);
 
       //ref: https://emailregex.com/
