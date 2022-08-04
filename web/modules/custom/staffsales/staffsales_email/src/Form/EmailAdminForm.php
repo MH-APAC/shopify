@@ -55,19 +55,13 @@ class EmailAdminForm extends FormBase {
       '#description' => 'Email inputted here will override the general domain quota. Email list in multiple lines, no comma.',
     ];
     $form[1]['yearround_emails'] = [
-      '#type' => 'textarea',
-      '#title' => 'General Emails',
-      '#rows' => 4,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'General Emails',
+      '#rows' => 4, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $yearround_emails,
     ];
     $form[1]['vip_emails'] = [
-      '#type' => 'textarea',
-      '#title' => 'VIP Emails (MH)',
-      '#rows' => 2,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'VIP Emails (MH)',
+      '#rows' => 2, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $vip_emails,
     ];
 
@@ -77,19 +71,13 @@ class EmailAdminForm extends FormBase {
       '#description' => 'Email inputted here will override the general domain quota. Email list in multiple lines, no comma.',
     ];
     $form[2]['yearround_emails2'] = [
-      '#type' => 'textarea',
-      '#title' => 'General Emails',
-      '#rows' => 4,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'General Emails',
+      '#rows' => 4, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $yearround_emails2,
     ];
     $form[2]['vip_emails2'] = [
-      '#type' => 'textarea',
-      '#title' => 'VIP Emails (LV)',
-      '#rows' => 2,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'VIP Emails (LV)',
+      '#rows' => 2, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $vip_emails2,
     ];
 
@@ -99,19 +87,13 @@ class EmailAdminForm extends FormBase {
       '#description' => 'Email inputted here will override the general domain quota. Email list in multiple lines, no comma.',
     ];
     $form[3]['yearround_emails3'] = [
-      '#type' => 'textarea',
-      '#title' => 'General Emails',
-      '#rows' => 4,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'General Emails',
+      '#rows' => 4, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $yearround_emails3,
     ];
     $form[3]['vip_emails3'] = [
-      '#type' => 'textarea',
-      '#title' => 'VIP Emails (OC)',
-      '#rows' => 2,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'VIP Emails (OC)',
+      '#rows' => 2, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $vip_emails3,
     ];
 
@@ -121,19 +103,13 @@ class EmailAdminForm extends FormBase {
       '#description' => 'Email inputted here will override the general domain quota. Email list in multiple lines, no comma.',
     ];
     $form[4]['yearround_emails4'] = [
-      '#type' => 'textarea',
-      '#title' => 'General Emails',
-      '#rows' => 4,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'General Emails',
+      '#rows' => 4, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $yearround_emails4,
     ];
     $form[4]['vip_emails4'] = [
-      '#type' => 'textarea',
-      '#title' => 'VIP Emails (FF)',
-      '#rows' => 2,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'VIP Emails (FF)',
+      '#rows' => 2, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $vip_emails4,
     ];
 
@@ -143,19 +119,13 @@ class EmailAdminForm extends FormBase {
       '#description' => 'Email inputted here will override the general domain quota. Email list in multiple lines, no comma.',
     ];
     $form[5]['yearround_emails5'] = [
-      '#type' => 'textarea',
-      '#title' => 'General Emails',
-      '#rows' => 4,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'General Emails',
+      '#rows' => 4, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $yearround_emails5,
     ];
     $form[5]['vip_emails5'] = [
-      '#type' => 'textarea',
-      '#title' => 'VIP Emails (OP1)',
-      '#rows' => 2,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'VIP Emails (OP1)',
+      '#rows' => 2, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $vip_emails5,
     ];
 
@@ -165,19 +135,13 @@ class EmailAdminForm extends FormBase {
       '#description' => 'Email inputted here will override the general domain quota. Email list in multiple lines, no comma.',
     ];
     $form[6]['yearround_emails6'] = [
-      '#type' => 'textarea',
-      '#title' => 'General Emails',
-      '#rows' => 4,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'General Emails',
+      '#rows' => 4, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $yearround_emails6,
     ];
     $form[6]['vip_emails6'] = [
-      '#type' => 'textarea',
-      '#title' => 'VIP Emails (OP2)',
-      '#rows' => 2,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'VIP Emails (OP2)',
+      '#rows' => 2, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $vip_emails6,
     ];
 
@@ -187,27 +151,18 @@ class EmailAdminForm extends FormBase {
       '#description' => 'Email inputted here will override the general domain quota. Email list in multiple lines, no comma.',
     ];
     $form[7]['seasonal_emails'] = [
-      '#type' => 'textarea',
-      '#title' => 'General Emails',
-      '#rows' => 4,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'General Emails',
+      '#rows' => 4, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $seasonal_emails,
     ];
     $form[7]['vip_emailss'] = [
-      '#type' => 'textarea',
-      '#title' => 'VIP Emails (Seasonal)',
-      '#rows' => 2,
-      '#cols' => 80,
-      '#resizable' => TRUE,
+      '#type' => 'textarea', '#title' => 'VIP Emails (Seasonal)',
+      '#rows' => 2, '#cols' => 80, '#resizable' => TRUE,
       '#default_value' => $vip_emailss,
     ];
-
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
-      '#type' => 'submit',
-      '#value' => 'Save',
-      '#button_type' => 'primary',
+      '#type' => 'submit', '#value' => 'Save', '#button_type' => 'primary',
     ];
 
     return $form;
