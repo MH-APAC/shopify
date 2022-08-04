@@ -27,7 +27,7 @@ class SyncInventoryOrderProcessor extends QueueWorkerBase {
     $line_items = $data['line_items'];
     $products = [];
 
-    foreach ($line_items as $i => $j) {
+    foreach ($line_items as $j) {
       $prefix = substr($j['variant_title'], 0, 3);
       $prefix = strtoupper($prefix);
       switch ($prefix){
