@@ -416,7 +416,7 @@ class DomainAdminForm extends FormBase {
     else {
       $domains = preg_split("/\r\n|\n|\r/", $domains);
       $domains = array_map('trim', $domains);
-      $domains = array_filter($domains);//empty line
+      $domains = array_filter($domains);
       $domains = array_map('strtolower', $domains);
 
       /*
