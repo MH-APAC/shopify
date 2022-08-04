@@ -379,7 +379,6 @@ class CustomerRestResource extends RestResourceBase {
 
   private function has_account($email){
     $has_account = FALSE;
-    $error_messages = '';
 
     $shopify = new StaffsalesShopify();
     $opts = [];
