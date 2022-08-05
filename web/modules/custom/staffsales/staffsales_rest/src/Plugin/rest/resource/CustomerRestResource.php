@@ -225,7 +225,7 @@ class CustomerRestResource extends RestResourceBase {
           'first_name' => $first_name,
           'last_name' => $last_name,
           'email' => $email,
-          'accepts_marketing' => $accepts_marketing,
+          'email_marketing_consent' => $accepts_marketing,
           'note' => $customer_note,
           'send_email_invite' => TRUE
         ],
