@@ -214,8 +214,6 @@ class CustomerRestResource extends RestResourceBase {
       $first_name = trim($first_name);
       $last_name = isset($form['last_name']) ? $form['last_name'] : NULL;
       $last_name = trim($last_name);
-      $accepts_marketing = isset($form['accepts_marketing']) ? $form['accepts_marketing'] : NULL;
-      $accepts_marketing = trim($accepts_marketing);
       $customer_note = isset($form['note']) ? $form['note'] : NULL;
       $customer_note = trim($customer_note);
 
@@ -225,7 +223,11 @@ class CustomerRestResource extends RestResourceBase {
           'first_name' => $first_name,
           'last_name' => $last_name,
           'email' => $email,
-          'email_marketing_consent' => $accepts_marketing,
+          'email_marketing_consent' => [
+            'state' => 'subscribed',
+            'marketingState' => 'single_opt_in',
+            'consent_updated_at' => 'null'
+          ],
           'note' => $customer_note,
           'send_email_invite' => TRUE
         ],
