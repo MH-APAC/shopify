@@ -45,7 +45,7 @@ class StaffsalesRestMiddleware implements HttpKernelInterface {
    * {@inheritdoc}
    */
   public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = TRUE) {
-    if(self::isAPIPath($request)){
+    if(static::isAPIPath($request)){
       //it is also possible to implement ServiceModifierInterface and modify other service
       $request->attributes->set('StaffsalesAccessMiddleware_skip_handle', TRUE);
     }

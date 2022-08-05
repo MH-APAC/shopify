@@ -22,7 +22,7 @@ use \Shopify\ClientException;
  *   label = @Translation("CustomerRestResource"),
  *   uri_paths = {
  *     "canonical" = "/api/v1/customer",
- *     "https://www.drupal.org/link-relations/create" = "/api/v1/customer"
+ *     "create" = "/api/v1/customer"
  *   }
  * )
  */
@@ -55,7 +55,7 @@ class CustomerRestResource extends RestResourceBase {
     $email = isset($data['email']) ? $data['email'] : NULL;
     $email = trim($email);
     $email = strtolower($email);
-    $password = isset($data['password']) ? $data['password'] : NULL;//password cannot be blank
+    $password = isset($data['password']) ? $data['password'] : NULL;
 
     if (!empty($op)) {
       switch ($op) {
@@ -195,8 +195,10 @@ class CustomerRestResource extends RestResourceBase {
     }
 
     $data = [];
-    $data['success'] = $success;//REST executed without error
-    $data['status'] = $status;//Customer tags modified
+    //REST executed without error
+    $data['success'] = $success;
+    //Customer tags modified
+    $data['status'] = $status;
     $data['errors'] = $error_messages;
 
     return $this->noCacheResponse($data);
@@ -281,7 +283,7 @@ class CustomerRestResource extends RestResourceBase {
 
     try {
       $db = Database::getConnection();
-      $query = $db->insert('staffsales_passcode')
+      $db->insert('staffsales_passcode')
         ->fields([
           'email' => $email,
           'passcode' => $passcode,
@@ -342,36 +344,34 @@ class CustomerRestResource extends RestResourceBase {
 
 
     if(!empty($seasonal_enabled)) {
-      if (in_array($email_domain, $seasonal_domains)) {
-        $is_allow = TRUE;
-      } else if (in_array($email, $seasonal_emails) or in_array($email, $vip_emailss)) {
+      if (in_array($email_domain, $seasonal_domains) || in_array($email, $seasonal_emails) || in_array($email, $vip_emailss)) {
         $is_allow = TRUE;
       }
     }
     //year_round_sales is always allowed
     if(in_array($email_domain, $yearround_domains)) {
       $is_allow = TRUE;
-    }else if(in_array($email_domain, $yearround_domains2)) {
+    }elseif(in_array($email_domain, $yearround_domains2)) {
       $is_allow = TRUE;
-    }else if(in_array($email_domain, $yearround_domains3)) {
+    }elseif(in_array($email_domain, $yearround_domains3)) {
       $is_allow = TRUE;
-    }else if(in_array($email_domain, $yearround_domains4)) {
+    }elseif(in_array($email_domain, $yearround_domains4)) {
       $is_allow = TRUE;
-    }else if(in_array($email_domain, $yearround_domains5)) {
+    }elseif(in_array($email_domain, $yearround_domains5)) {
       $is_allow = TRUE;
-    }else if(in_array($email_domain, $yearround_domains6)) {
+    }elseif(in_array($email_domain, $yearround_domains6)) {
       $is_allow = TRUE;
-    }else if(in_array($email, $yearround_emails) or in_array($email, $vip_emails)) {
+    }elseif(in_array($email, $yearround_emails) || in_array($email, $vip_emails)) {
       $is_allow = TRUE;
-    }else if(in_array($email, $yearround_emails2) or in_array($email, $vip_emails2)) {
+    }elseif(in_array($email, $yearround_emails2) || in_array($email, $vip_emails2)) {
       $is_allow = TRUE;
-    }else if(in_array($email, $yearround_emails3) or in_array($email, $vip_emails3)) {
+    }elseif(in_array($email, $yearround_emails3) || in_array($email, $vip_emails3)) {
       $is_allow = TRUE;
-    }else if(in_array($email, $yearround_emails4) or in_array($email, $vip_emails4)) {
+    }elseif(in_array($email, $yearround_emails4) || in_array($email, $vip_emails4)) {
       $is_allow = TRUE;
-    }else if(in_array($email, $yearround_emails5) or in_array($email, $vip_emails5)) {
+    }elseif(in_array($email, $yearround_emails5) || in_array($email, $vip_emails5)) {
       $is_allow = TRUE;
-    }else if(in_array($email, $yearround_emails6) or in_array($email, $vip_emails6)) {
+    }elseif(in_array($email, $yearround_emails6) || in_array($email, $vip_emails6)) {
       $is_allow = TRUE;
     }
     return $is_allow;
@@ -379,7 +379,6 @@ class CustomerRestResource extends RestResourceBase {
 
   private function has_account($email){
     $has_account = FALSE;
-    $error_messages = '';
 
     $shopify = new StaffsalesShopify();
     $opts = [];
@@ -391,7 +390,7 @@ class CustomerRestResource extends RestResourceBase {
     try {
       $r = $shopify->get('customers/search', $opts);
       if ($r->customers) {
-        foreach ($r->customers as $i => $j) {
+        foreach ($r->customers as $j) {
           if ($j->email == $email) {
             if($j->state == 'enabled'){
               $has_account = TRUE;
@@ -401,7 +400,7 @@ class CustomerRestResource extends RestResourceBase {
         }
       }
     } catch (ClientException $e) {
-      $error_messages = $this->getError($e);
+      $this->getError($e);
     }
 
     return $has_account;
@@ -410,7 +409,7 @@ class CustomerRestResource extends RestResourceBase {
   /**
    * https://stackoverflow.com/questions/4356289/php-random-string-generator/31107425#31107425
    */
-  function genPasscode($length, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
+  private function genPasscode($length, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
     $pieces = [];
     $max = mb_strlen($keyspace, '8bit') - 1;
     for ($i = 0; $i < $length; ++$i) {

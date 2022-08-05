@@ -20,7 +20,7 @@ abstract class RestResourceBase extends ResourceBase {
       $errors = get_object_vars($errors);
       $error_messages = [];
       foreach ($errors as $i => $j) {
-        $error_messages[] = ucfirst($i) . ' ' . @$j[0];
+        $error_messages[] = ucfirst($i) . ' ' . $j[0];
       }
       $error_messages = implode("\n", $error_messages);
     }

@@ -33,7 +33,7 @@ class DomainAdminForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $domains = self::getAllDomains();
+    $domains = static::getAllDomains();
     $yearround_domains = $domains['yearround_domains'];
     $yearround_domains2 = $domains['yearround_domains2'];
     $yearround_domains3 = $domains['yearround_domains3'];
@@ -359,7 +359,7 @@ class DomainAdminForm extends FormBase {
     $domains = $query->execute()->fetchAll();
 
     //split the domain list
-    foreach ($domains as $i => $j) {
+    foreach ($domains as $j) {
       switch ($j->shop) {
         case self::SHOP_YEAR_ROUND:
           $yearround_domains[] = $j->domain;
@@ -416,7 +416,7 @@ class DomainAdminForm extends FormBase {
     else {
       $domains = preg_split("/\r\n|\n|\r/", $domains);
       $domains = array_map('trim', $domains);
-      $domains = array_filter($domains);//empty line
+      $domains = array_filter($domains);
       $domains = array_map('strtolower', $domains);
 
       /*
