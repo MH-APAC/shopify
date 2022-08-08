@@ -1,5 +1,0 @@
-<?php
-
-function staffsales_shopify_uninstall() {
-  \Drupal::configFactory()->getEditable('staffsales_shopify.settings')->delete();
-}
