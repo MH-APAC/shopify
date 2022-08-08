@@ -60,32 +60,17 @@ class CustomerRestResource extends RestResourceBase {
     if (!empty($op)) {
       switch ($op) {
         case 'is_allow':
-          if(!empty($email)){
-            return $this->op_is_allow($email, $seasonal_enabled);
-          }
-          break;
+          return $this->op_is_allow($email, $seasonal_enabled);
         case 'login':
-          if(!empty($email) && !empty($password)) {
-            return $this->op_login($email, $password, $seasonal_enabled);
-          }
-          break;
+          return $this->op_login($email, $password, $seasonal_enabled);
         case 'webhook_login':
-          if (!empty($email)) {
-            return $this->op_webhook_login($email);
-          }
-          break;
+          return $this->op_webhook_login($email);
         case 'register':
-          if(!empty($email)) {
-            return $this->op_register($email, $seasonal_enabled, $data);
-          }
-          break;
+          return $this->op_register($email, $seasonal_enabled, $data);
         case 'verify_passcode':
           $passcode = isset($data['passcode']) ? $data['passcode'] : NULL;
           $passcode = trim($passcode);
-          if(!empty($email) && !empty($passcode)) {
-            return $this->op_verify_passcode($email, $passcode);
-          }
-          break;
+          return $this->op_verify_passcode($email, $passcode);
         default:
           break;
       }
