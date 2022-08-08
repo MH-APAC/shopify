@@ -83,10 +83,7 @@ class QuotaAdminForm extends FormBase {
 
     foreach ($this->metafield_keys as $k => $v) {
       $k_split = explode('_', $k);
-      if (count($k_split) < 5) {
-        continue;
-      }
-      if ($k_split[0] != 'quota') {
+      if (count($k_split) < 5 || $k_split[0] != 'quota') {
         continue;
       }
       $title = '';
@@ -102,26 +99,27 @@ class QuotaAdminForm extends FormBase {
       }
       $fieldset_key = $k_split[1] . '_' . $k_split[2];
 
-      if ($k_split[1] == 't1') {
-        $title = $title . 'MH (MH)';
-      }
-      elseif ($k_split[1] == 't2') {
-        $title = $title . 'LVMH (LV)';
-      }
-      elseif ($k_split[1] == 't3') {
-        $title = $title . 'Other Corporates (OC)';
-      }
-      elseif ($k_split[1] == 't4') {
-        $title = $title . 'FRIENDS & FAMILY (FF)';
-      }
-      elseif ($k_split[1] == 't5') {
-        $title = $title . 'Others (OP1)';
-      }
-      elseif ($k_split[1] == 't6') {
-        $title = $title . 'Others (OP2)';
-      }
-      else {
-        $title = $title . 'All';
+      switch ($k_split[1]) {
+        case 't1':
+          $title = $title . 'MH (MH)';
+          break;
+        case 't2':
+          $title = $title . 'LVMH (LV)';
+          break;
+        case 't3':
+          $title = $title . 'Other Corporates (OC)';
+          break;
+        case 't4':
+          $title = $title . 'FRIENDS & FAMILY (FF)';
+          break;
+        case 't5':
+          $title = $title . 'Others (OP1)';
+          break;
+        case 't6':
+          $title = $title . 'Others (OP2)';
+          break;
+        default:
+          $title = $title . 'All';
       }
 
       if (!isset($form[$fieldset_key])) {
