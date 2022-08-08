@@ -345,10 +345,8 @@ class CustomerRestResource extends RestResourceBase {
     $vip_emailss = explode(PHP_EOL, $emails['vip_emailss']);
 
 
-    if(!empty($seasonal_enabled)) {
-      if (in_array($email_domain, $seasonal_domains) || in_array($email, $seasonal_emails) || in_array($email, $vip_emailss)) {
+    if(!empty($seasonal_enabled) && (in_array($email_domain, $seasonal_domains) || in_array($email, $seasonal_emails) || in_array($email, $vip_emailss))) {
         $is_allow = TRUE;
-      }
     }
     //year_round_sales is always allowed
     if(in_array($email_domain, $yearround_domains)) {
