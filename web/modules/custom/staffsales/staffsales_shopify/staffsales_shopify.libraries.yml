@@ -1,6 +1,0 @@
-variant-split:
-  js:
-    templates/js/variant-split.js: {}
-  dependencies:
-      - core/drupal
-      - core/jquery

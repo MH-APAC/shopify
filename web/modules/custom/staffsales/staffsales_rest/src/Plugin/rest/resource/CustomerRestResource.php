@@ -60,32 +60,17 @@ class CustomerRestResource extends RestResourceBase {
     if (!empty($op)) {
       switch ($op) {
         case 'is_allow':
-          if(!empty($email)){
-            return $this->op_is_allow($email, $seasonal_enabled);
-          }
-          break;
+          return $this->op_is_allow($email, $seasonal_enabled);
         case 'login':
-          if(!empty($email) && !empty($password)) {
-            return $this->op_login($email, $password, $seasonal_enabled);
-          }
-          break;
+          return $this->op_login($email, $password, $seasonal_enabled);
         case 'webhook_login':
-          if (!empty($email)) {
-            return $this->op_webhook_login($email);
-          }
-          break;
+          return $this->op_webhook_login($email);
         case 'register':
-          if(!empty($email)) {
-            return $this->op_register($email, $seasonal_enabled, $data);
-          }
-          break;
+          return $this->op_register($email, $seasonal_enabled, $data);
         case 'verify_passcode':
           $passcode = isset($data['passcode']) ? $data['passcode'] : NULL;
           $passcode = trim($passcode);
-          if(!empty($email) && !empty($passcode)) {
-            return $this->op_verify_passcode($email, $passcode);
-          }
-          break;
+          return $this->op_verify_passcode($email, $passcode);
         default:
           break;
       }
@@ -214,8 +199,6 @@ class CustomerRestResource extends RestResourceBase {
       $first_name = trim($first_name);
       $last_name = isset($form['last_name']) ? $form['last_name'] : NULL;
       $last_name = trim($last_name);
-      $accepts_marketing = isset($form['accepts_marketing']) ? $form['accepts_marketing'] : NULL;
-      $accepts_marketing = trim($accepts_marketing);
       $customer_note = isset($form['note']) ? $form['note'] : NULL;
       $customer_note = trim($customer_note);
 
@@ -225,7 +208,11 @@ class CustomerRestResource extends RestResourceBase {
           'first_name' => $first_name,
           'last_name' => $last_name,
           'email' => $email,
-          'accepts_marketing' => $accepts_marketing,
+          'email_marketing_consent' => [
+            'state' => 'subscribed',
+            'opt_in_level' => 'confirmed_opt_in',
+            'consent_updated_at' => 'null'
+          ],
           'note' => $customer_note,
           'send_email_invite' => TRUE
         ],
@@ -343,10 +330,8 @@ class CustomerRestResource extends RestResourceBase {
     $vip_emailss = explode(PHP_EOL, $emails['vip_emailss']);
 
 
-    if(!empty($seasonal_enabled)) {
-      if (in_array($email_domain, $seasonal_domains) || in_array($email, $seasonal_emails) || in_array($email, $vip_emailss)) {
+    if(!empty($seasonal_enabled) && (in_array($email_domain, $seasonal_domains) || in_array($email, $seasonal_emails) || in_array($email, $vip_emailss))) {
         $is_allow = TRUE;
-      }
     }
     //year_round_sales is always allowed
     if(in_array($email_domain, $yearround_domains)) {
@@ -389,14 +374,12 @@ class CustomerRestResource extends RestResourceBase {
 
     try {
       $r = $shopify->get('customers/search', $opts);
-      if ($r->customers) {
-        foreach ($r->customers as $j) {
-          if ($j->email == $email) {
-            if($j->state == 'enabled'){
-              $has_account = TRUE;
-            }
-            break;
+      foreach ($r->customers as $j) {
+        if ($j->email == $email) {
+          if($j->state == 'enabled') {
+            $has_account = TRUE;
           }
+          break;
         }
       }
     } catch (ClientException $e) {
