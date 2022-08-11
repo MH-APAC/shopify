@@ -2874,17 +2874,17 @@
         },
         {
             "name": "drupal/admin_toolbar",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/admin_toolbar.git",
-                "reference": "3.1.0"
+                "reference": "3.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.1.0.zip",
-                "reference": "3.1.0",
-                "shasum": "7b596d7de04faca747ba3e5216c2e819aae71f40"
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.1.1.zip",
+                "reference": "3.1.1",
+                "shasum": "a66ce69cd7e56f1cc43797dc2a58d6eab367d353"
             },
             "require": {
                 "drupal/core": "^8.8.0 || ^9.0 || ^10.0"
@@ -2895,8 +2895,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.1.0",
-                    "datestamp": "1643742891",
+                    "version": "3.1.1",
+                    "datestamp": "1658802262",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6348,16 +6348,16 @@
             ],
             "authors": [
                 {
-                    "name": "LukeLast",
-                    "homepage": "https://www.drupal.org/user/30151"
-                },
-                {
                     "name": "japerry",
                     "homepage": "https://www.drupal.org/user/45640"
                 },
                 {
                     "name": "josesanmartin",
                     "homepage": "https://www.drupal.org/user/72012"
+                },
+                {
+                    "name": "LukeLast",
+                    "homepage": "https://www.drupal.org/user/30151"
                 },
                 {
                     "name": "oadaeh",
@@ -9255,13 +9255,13 @@
             "source": {
                 "type": "git",
                 "url": "git@gitlab.moet-hennessy.net:mhis/dynamic/agency/drupal-common/drupal-composer.git",
-                "reference": "aa051a65d684d962dc8e68a4848000e10abad31d"
+                "reference": "b020c55f3a9a44de476e37512434d507b2f5141e"
             },
             "require": {
                 "composer/installers": "^2.0",
                 "cweagans/composer-patches": "^1.7",
                 "drupal/address": "1.10.0",
-                "drupal/admin_toolbar": "3.1.0",
+                "drupal/admin_toolbar": "3.1.1",
                 "drupal/adminimal_admin_toolbar": "1.11.0",
                 "drupal/adminimal_theme": "1.6.0",
                 "drupal/akamai": "4.0.1",
@@ -9391,7 +9391,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Contains list of dependencies for MH drupal package.",
-            "time": "2022-08-10T13:34:19+00:00"
+            "time": "2022-08-11T07:56:20+00:00"
         },
         {
             "name": "mh/drupal-custom-modules",
