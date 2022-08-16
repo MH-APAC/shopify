@@ -8,7 +8,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/shopify": "^1.0@alpha",
         "drupal/swiftmailer": "^2.2",
-        "mh/drupal-core-package": "dev-main",
+        "mh/drupal-core-package": "~1.0",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "conflict": {
@@ -26,7 +26,9 @@
             "drupal/core-composer-scaffold": true,
             "cweagans/composer-patches": true,
             "simplesamlphp/composer-module-installer": true,
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "phpro/grumphp-shim": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "extra": {
@@ -42,17 +44,20 @@
         },
         "merge-plugin": {
             "include": [
-                "web/modules/contrib/webform/composer.libraries.json"
+                "web/modules/contrib/webform/composer.libraries.json",
+                "composer.libraries.json"
             ],
             "recurse": false,
             "replace": false,
             "merge-extra": false
         },
         "installer-types": [
+            "bower-asset",
             "drupal-custom-configuration",
             "drupal-custom-modules",
             "drupal-custom-patches",
-            "drupal-library"
+            "drupal-library",
+            "npm-asset"
         ],
         "installer-paths": {
             "web/core": [

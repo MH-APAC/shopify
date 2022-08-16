@@ -98,9 +98,18 @@ $config['smtp.settings']['smtp_host'] = 'relay-smtp.relay-smtp.svc.cluster.local
 $config['smtp.settings']['smtp_port'] = '25';
 $config['smtp.settings']['smtp_username'] = '';
 $config['smtp.settings']['smtp_password'] = '';
+$config['mailsystem.settings']['defaults']['sender'] = 'SMTPMailSystem';
 
 /**
  * LOG STDOUT configs.
  */
 $config['log_stdout.settings']['format'] = 'drupal_log|@base_url|@timestamp|@type|@ip|@request_uri|@referer|@uid|@link|@message';
 $config['log_stdout.settings']['use_stderr'] = null;
+
+/**
+ * Include site and environment specific override settings.
+ */
+$environment = getenv('APP_ENV');
+if (file_exists(__DIR__ . "/$environment.settings.inc")) {
+  include "$environment.settings.inc";
+}

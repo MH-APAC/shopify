@@ -1,3 +1,29 @@
 ---
 extends: 'drupal8'
 version: '8.8.6'
+
+requires_version: true
+
+tables:
+    cache_*:
+        truncate: true
+
+    sessions:
+        truncate: true
+
+    users_field_data:
+        converters:
+            mail:
+                converter: 'randomizeEmail'
+                condition: '{{uid}} != "1"'
+            init:
+                converter: 'randomizeEmail'
+                unique: true
+                condition: '{{uid}} != "1"'
+            name:
+                converter: 'randomizeText'
+                unique: true
+                condition: '{{uid}} != "1"'
+            pass:
+                converter: 'randomizeText'
+                condition: '{{uid}} != "1"'
