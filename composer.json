@@ -1,8 +1,8 @@
 {
     "name": "mh/drupal-project-template",
-    "type": "project",
     "description": "Template for MH Drupal projects.",
     "license": "GPL-2.0+",
+    "type": "project",
     "require": {
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
@@ -14,88 +14,6 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "config": {
-        "bin-dir": "bin",
-        "discard-changes": true,
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "wikimedia/composer-merge-plugin": true,
-            "composer/installers": true,
-            "drupal/core-project-message": true,
-            "drupal/core-composer-scaffold": true,
-            "cweagans/composer-patches": true,
-            "simplesamlphp/composer-module-installer": true,
-            "oomphinc/composer-installers-extender": true,
-            "phpro/grumphp-shim": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        }
-    },
-    "extra": {
-        "patches": {},
-        "enable-patching": true,
-        "patchLevel": {
-            "drupal/core": "-p2"
-        },
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "web/"
-            }
-        },
-        "merge-plugin": {
-            "include": [
-                "web/modules/contrib/webform/composer.libraries.json",
-                "composer.libraries.json"
-            ],
-            "recurse": false,
-            "replace": false,
-            "merge-extra": false
-        },
-        "installer-types": [
-            "bower-asset",
-            "drupal-custom-configuration",
-            "drupal-custom-modules",
-            "drupal-custom-patches",
-            "drupal-library",
-            "npm-asset"
-        ],
-        "installer-paths": {
-            "web/core": [
-                "type:drupal-core"
-            ],
-            "web/libraries/{$name}": [
-                "type:drupal-library",
-                "type:bower-asset",
-                "type:npm-asset"
-            ],
-            "web/modules/contrib/{$name}": [
-                "type:drupal-module"
-            ],
-            "web/profiles/contrib/{$name}": [
-                "type:drupal-profile"
-            ],
-            "web/themes/contrib/{$name}": [
-                "type:drupal-theme"
-            ],
-            "drush/Commands/contrib/{$name}": [
-                "type:drupal-drush"
-            ],
-            "web/modules/custom/{$name}": [
-                "type:drupal-custom-module"
-            ],
-            "web/modules/mh": [
-                "type:drupal-custom-modules"
-            ],
-            "patches/mh": [
-                "type:drupal-custom-patches"
-            ],
-            "conf": [
-                "type:drupal-custom-configuration"
-            ]
-        },
-        "scripts-dev": {}
-    },
-    "autoload": {},
     "repositories": [
         {
             "type": "composer",
@@ -124,5 +42,89 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "autoload": {},
+    "config": {
+        "allow-plugins": {
+            "wikimedia/composer-merge-plugin": true,
+            "composer/installers": true,
+            "drupal/core-project-message": true,
+            "drupal/core-composer-scaffold": true,
+            "cweagans/composer-patches": true,
+            "simplesamlphp/composer-module-installer": true,
+            "oomphinc/composer-installers-extender": true,
+            "phpro/grumphp-shim": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true
+        },
+        "bin-dir": "bin",
+        "discard-changes": true,
+        "platform-check": false,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "enable-patching": true,
+        "installer-paths": {
+            "conf": [
+                "type:drupal-custom-configuration"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "patches/mh": [
+                "type:drupal-custom-patches"
+            ],
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/modules/mh": [
+                "type:drupal-custom-modules"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ]
+        },
+        "installer-types": [
+            "bower-asset",
+            "drupal-custom-configuration",
+            "drupal-custom-modules",
+            "drupal-custom-patches",
+            "drupal-library",
+            "npm-asset"
+        ],
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/webform/composer.libraries.json",
+                "composer.libraries.json"
+            ],
+            "merge-extra": false,
+            "recurse": false,
+            "replace": false
+        },
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "patches": {},
+        "scripts-dev": {}
+    },
     "scripts": {}
 }
