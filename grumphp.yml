@@ -29,9 +29,11 @@ grumphp:
     composer:
       no_check_all: true
     composer_normalize:
-      indent_size: 4
+      indent_size: ~
       indent_style: space
-      use_standalone: true
+      no_check_lock: false
+      no_update_lock: true
+      verbose: false
     git_blacklist:
       keywords:
         - "console\\.log\\("
@@ -65,7 +67,7 @@ grumphp:
     phpcpd:
       directory: [ './web/modules/custom/' ]
     phpcs:
-      standard: 
+      standard:
         - vendor/drupal/coder/coder_sniffer/Drupal
         - vendor/drupal/coder/coder_sniffer/DrupalPractice
       ignore_patterns:
