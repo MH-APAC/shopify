@@ -9773,18 +9773,22 @@
         },
         {
             "name": "mh/drupal-custom-modules",
-            "version": "1.0.7",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.moet-hennessy.net:mhis/dynamic/agency/drupal-common/drupal-custom-modules.git",
-                "reference": "d3acc42117eabcf4502a563ebc33de3a5923e657"
+                "reference": "666428cfdffbcebfe4e58de033696c7018c2bec6"
+            },
+            "require": {
+                "mtdowling/cron-expression": "1.2.1",
+                "wazaari/monolog-mysql": "1.0.6"
             },
             "type": "drupal-custom-modules",
             "license": [
                 "GPL-2.0+"
             ],
             "description": "Contain custom modules for the MH Drupal package.",
-            "time": "2022-08-25T08:43:27+00:00"
+            "time": "2022-08-25T13:36:01+00:00"
         },
         {
             "name": "mh/drupal-patches",
@@ -20320,6 +20324,56 @@
                 "source": "https://github.com/TYPO3/phar-stream-wrapper/tree/v3.1.7"
             },
             "time": "2021-09-20T19:19:13+00:00"
+        },
+        {
+            "name": "wazaari/monolog-mysql",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/waza-ari/monolog-mysql.git",
+                "reference": "ef947b62674c0701ef9b612406e8c164ce32a3e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/waza-ari/monolog-mysql/zipball/ef947b62674c0701ef9b612406e8c164ce32a3e7",
+                "reference": "ef947b62674c0701ef9b612406e8c164ce32a3e7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "ext-pdo_mysql": "*",
+                "monolog/monolog": ">1.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MySQLHandler\\": "src/MySQLHandler"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Herrmann",
+                    "email": "daniel.herrmann1@gmail.com"
+                }
+            ],
+            "description": "A handler for Monolog that sends messages to MySQL",
+            "homepage": "https://github.com/waza-ari/monolog-mysql",
+            "keywords": [
+                "database",
+                "log",
+                "logging",
+                "monolog",
+                "mysql"
+            ],
+            "support": {
+                "issues": "https://github.com/waza-ari/monolog-mysql/issues",
+                "source": "https://github.com/waza-ari/monolog-mysql/tree/v1.0.6"
+            },
+            "time": "2020-07-03T07:35:44+00:00"
         },
         {
             "name": "webflo/drupal-finder",
