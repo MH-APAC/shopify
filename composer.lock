@@ -5108,17 +5108,17 @@
         },
         {
             "name": "drupal/memcache",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/memcache.git",
-                "reference": "8.x-2.4"
+                "reference": "8.x-2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/memcache-8.x-2.4.zip",
-                "reference": "8.x-2.4",
-                "shasum": "200c3a95d535549459091f061203d22f8b47d44a"
+                "url": "https://ftp.drupal.org/files/projects/memcache-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "a01db2a9b7122a397c4f4ad66e0a380d1148a157"
             },
             "require": {
                 "drupal/core": "^9.1 || ^10"
@@ -5126,8 +5126,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.4",
-                    "datestamp": "1659633918",
+                    "version": "8.x-2.5",
+                    "datestamp": "1661188440",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9697,11 +9697,11 @@
         },
         {
             "name": "mh/drupal-core-package",
-            "version": "1.0.14",
+            "version": "1.0.15",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.moet-hennessy.net:mhis/dynamic/agency/drupal-common/drupal-composer.git",
-                "reference": "8ad233dc3d0eb0d349471c06be1d89404bcd6602"
+                "reference": "61bcb599ed4ff06a9ec49d0993287de620496816"
             },
             "require": {
                 "composer/installers": "^2.0",
@@ -9731,7 +9731,7 @@
                 "drupal/ldap": "4.3.0",
                 "drupal/log_stdout": "1.3.0",
                 "drupal/login_history": "1.1.0",
-                "drupal/memcache": "2.4.0",
+                "drupal/memcache": "2.5.0",
                 "drupal/mobile_detect": "3.0.4",
                 "drupal/module_missing_message_fixer": "2.0.2",
                 "drupal/optimizedb": "1.0.0-rc3",
@@ -9838,7 +9838,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Contains list of dependencies for MH drupal package.",
-            "time": "2022-10-13T14:22:03+00:00"
+            "time": "2022-10-18T09:50:45+00:00"
         },
         {
             "name": "mh/drupal-custom-modules",
