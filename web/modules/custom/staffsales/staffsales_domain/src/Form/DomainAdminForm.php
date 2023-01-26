@@ -263,7 +263,7 @@ class DomainAdminForm extends FormBase {
           'namespace' => 'staffsales',
           'key' => 'domain_price_tier1',
           'value' => $domain_price_tier1,
-          'value_type' => 'string',
+          'type' => 'single_line_text_field',
         ],
       ];
       $shopify->post('metafields', $data);
@@ -274,7 +274,7 @@ class DomainAdminForm extends FormBase {
           'namespace' => 'staffsales',
           'key' => 'domain_price_tier2',
           'value' => $domain_price_tier2,
-          'value_type' => 'string',
+          'type' => 'single_line_text_field',
         ],
       ];
       $shopify->post('metafields', $data2);
@@ -285,7 +285,7 @@ class DomainAdminForm extends FormBase {
           'namespace' => 'staffsales',
           'key' => 'domain_price_tier3',
           'value' => $domain_price_tier3,
-          'value_type' => 'string',
+          'type' => 'single_line_text_field',
         ],
       ];
       $shopify->post('metafields', $data3);
@@ -296,7 +296,7 @@ class DomainAdminForm extends FormBase {
           'namespace' => 'staffsales',
           'key' => 'domain_price_tier4',
           'value' => $domain_price_tier4,
-          'value_type' => 'string',
+          'type' => 'single_line_text_field',
         ],
       ];
       $shopify->post('metafields', $data4);
@@ -307,7 +307,7 @@ class DomainAdminForm extends FormBase {
           'namespace' => 'staffsales',
           'key' => 'domain_price_tier5',
           'value' => $domain_price_tier5,
-          'value_type' => 'string',
+          'type' => 'single_line_text_field',
         ],
       ];
       $shopify->post('metafields', $data5);
@@ -318,7 +318,7 @@ class DomainAdminForm extends FormBase {
           'namespace' => 'staffsales',
           'key' => 'domain_price_tier6',
           'value' => $domain_price_tier6,
-          'value_type' => 'string',
+          'type' => 'single_line_text_field',
         ],
       ];
       $shopify->post('metafields', $data6);
@@ -329,7 +329,7 @@ class DomainAdminForm extends FormBase {
           'namespace' => 'staffsales',
           'key' => 'domain_price_seasonal',
           'value' => $domain_price_seasonal,
-          'value_type' => 'string',
+          'type' => 'single_line_text_field',
         ],
       ];
       $shopify->post('metafields', $data6);

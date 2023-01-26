@@ -109,7 +109,7 @@ class SettingAdminForm extends FormBase {
           'namespace' => 'staffsales',
           'key' => 'seasonal_enabled',
           'value' => $seasonal_enabled,
-          'value_type' => 'integer',
+          'type' => 'number_integer',
           ]
       ];
       $r = $shopify->post('metafields', $data);
@@ -119,7 +119,7 @@ class SettingAdminForm extends FormBase {
           'namespace' => 'staffsales',
           'key' => 'seasonal_begin',
           'value' => $seasonal_begin,
-          'value_type' => 'string',
+          'type' => 'single_line_text_field',
           ]
       ];
       $r = $shopify->post('metafields', $data);
@@ -129,7 +129,7 @@ class SettingAdminForm extends FormBase {
           'namespace' => 'staffsales',
           'key' => 'seasonal_end',
           'value' => $seasonal_end,
-          'value_type' => 'string',
+          'type' => 'single_line_text_field',
           ]
       ];
       $r = $shopify->post('metafields', $data);

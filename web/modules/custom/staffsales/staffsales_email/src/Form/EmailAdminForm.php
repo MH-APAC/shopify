@@ -367,52 +367,52 @@ class EmailAdminForm extends FormBase {
       $shopify = new StaffsalesShopify();
 
       $yearround_emails = implode (',', $yearround_emails);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails', 'value' => $yearround_emails, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails', 'value' => $yearround_emails, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
       $vip_emails = implode (',', $vip_emails);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip', 'value' => $vip_emails, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip', 'value' => $vip_emails, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
 
       $yearround_emails2 = implode (',', $yearround_emails2);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails2', 'value' => $yearround_emails2, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails2', 'value' => $yearround_emails2, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
       $vip_emails2 = implode (',', $vip_emails2);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip2', 'value' => $vip_emails2, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip2', 'value' => $vip_emails2, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
 
       $yearround_emails3 = implode (',', $yearround_emails3);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails3', 'value' => $yearround_emails3, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails3', 'value' => $yearround_emails3, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
       $vip_emails3 = implode (',', $vip_emails3);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip3', 'value' => $vip_emails3, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip3', 'value' => $vip_emails3, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
 
       $yearround_emails4 = implode (',', $yearround_emails4);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails4', 'value' => $yearround_emails4, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails4', 'value' => $yearround_emails4, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
       $vip_emails4 = implode (',', $vip_emails4);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip4', 'value' => $vip_emails4, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip4', 'value' => $vip_emails4, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
 
       $yearround_emails5 = implode (',', $yearround_emails5);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails5', 'value' => $yearround_emails5, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails5', 'value' => $yearround_emails5, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
       $vip_emails5 = implode (',', $vip_emails5);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip5', 'value' => $vip_emails5, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip5', 'value' => $vip_emails5, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
 
       $yearround_emails6 = implode (',', $yearround_emails6);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails6', 'value' => $yearround_emails6, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails6', 'value' => $yearround_emails6, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
       $vip_emails6 = implode (',', $vip_emails6);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip6', 'value' => $vip_emails6, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vip6', 'value' => $vip_emails6, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
 
       $seasonal_emails = implode (',', $seasonal_emails);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'seasonal_emails', 'value' => $seasonal_emails, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'seasonal_emails', 'value' => $seasonal_emails, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
       $vip_emailss = implode (',', $vip_emailss);
-      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vips', 'value' => $vip_emailss, 'value_type' => 'string',],];
+      $data = ['metafield' => ['namespace' => 'staffsales', 'key' => 'yearround_emails_vips', 'value' => $vip_emailss, 'type' => 'single_line_text_field',],];
       $shopify->post('metafields', $data);
 
       \Drupal::messenger()->addMessage('Updated successfully');
