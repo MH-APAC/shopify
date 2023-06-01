@@ -8,7 +8,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/shopify": "^1.0@alpha",
         "drupal/swiftmailer": "^2.2",
-        "mh/drupal-core-package": "~1.0",
+        "mh/drupal-core-package": "~1.0.0",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "conflict": {
