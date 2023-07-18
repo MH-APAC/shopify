@@ -210,8 +210,7 @@ class CustomerRestResource extends RestResourceBase {
           'email' => $email,
           'email_marketing_consent' => [
             'state' => 'subscribed',
-            'opt_in_level' => 'confirmed_opt_in',
-            'consent_updated_at' => 'null'
+            'opt_in_level' => 'confirmed_opt_in'
           ],
           'note' => $customer_note,
           'send_email_invite' => TRUE
