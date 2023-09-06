@@ -192,7 +192,7 @@ class CustomerRestResource extends RestResourceBase {
   private function op_register($email, $seasonal_enabled, $form) {
 
 
-      $recaptcha_response = $form['g-recaptcha-response'];
+      $recaptcha_response = $form['gRecaptchaResponse'];
       $secret_key = '6LdI6_4nAAAAAI9RQ8nruxFqi4iD7HhOpdW4-niu';
 
       $url = 'https://www.google.com/recaptcha/api/siteverify';
