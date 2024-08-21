@@ -3,7 +3,7 @@
 namespace Shopify;
 
 use Psr\Http\Message\ResponseInterface;
-use function GuzzleHttp\Psr7\parse_query;
+use GuzzleHttp\Psr7\Query;
 
 /**
  * Class PaginatedResponse
@@ -197,7 +197,7 @@ class PaginatedResponse {
       return [];
     }
     $query_params = parse_url($url, PHP_URL_QUERY);
-    return parse_query($query_params);
+    return Query::parse($query_params);
   }
 
   /**
