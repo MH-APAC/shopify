@@ -1,0 +1,4 @@
+_core:
+  default_config_hash: CkmpJe8_0UrxS99diNYffcf6SJcbRtIxgQTeCOxeOhQ
+format: drupal_log|@base_url|@timestamp|@type|@ip|@request_uri|@referer|@uid|@link|@message
+use_stderr: null

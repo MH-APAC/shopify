@@ -1,0 +1,23 @@
+uuid: 25db23e3-8b74-4062-a38b-690d2b7f9790
+langcode: en
+status: true
+dependencies:
+  config:
+    - rest.resource.customer_rest_resource
+    - rest.resource.order_rest_resource
+  module:
+    - rest
+    - system
+_core:
+  default_config_hash: pq_mEIu_B4widZN7Ap81iCJSjShFFdcL0jEiCi8VrDk
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'administer rest resources'
+  - 'restful get customer_rest_resource'
+  - 'restful get order_rest_resource'
+  - 'restful post customer_rest_resource'
+  - 'restful post order_rest_resource'

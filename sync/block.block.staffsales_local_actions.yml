@@ -1,0 +1,20 @@
+uuid: 0565cdcc-372b-40f4-9ab1-0c9f6b55e787
+langcode: en
+status: true
+dependencies:
+  theme:
+    - staffsales
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: staffsales_local_actions
+theme: staffsales
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
