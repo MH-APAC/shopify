@@ -63,7 +63,7 @@ class StaffsalesAccessMiddleware implements HttpKernelInterface {
       //put this in staffsales_shopify??
       $response->headers->remove('X-Frame-Options');
       $response->headers->set('Access-Control-Allow-Origin', '*');
-      $response->headers->set('Content-Security-Policy', 'frame-ancestors https://*.myshopify.com');
+      $response->headers->set('Content-Security-Policy', 'frame-ancestors https://*.myshopify.com https://*.shopify.com');
     }
 
     return $response;
