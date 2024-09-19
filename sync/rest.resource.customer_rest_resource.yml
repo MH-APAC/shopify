@@ -1,0 +1,24 @@
+uuid: f1676c7c-60fb-4c0e-9275-026d599b4197
+langcode: en
+status: true
+dependencies:
+  module:
+    - serialization
+    - staffsales_rest
+_core:
+  default_config_hash: Zyu9FfUGhi6i0OmE5hipkHWnN3NeX0v5fnyrziKehEk
+id: customer_rest_resource
+plugin_id: customer_rest_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - staffsales_rest
+  POST:
+    supported_formats:
+      - json
+      - form
+    supported_auth:
+      - staffsales_rest

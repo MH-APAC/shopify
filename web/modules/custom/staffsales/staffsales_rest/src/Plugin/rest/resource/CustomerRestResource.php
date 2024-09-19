@@ -190,50 +190,85 @@ class CustomerRestResource extends RestResourceBase {
   }
 
   private function op_register($email, $seasonal_enabled, $form) {
-    $is_allow = $this->is_allow($email, $seasonal_enabled);
-    $success = FALSE;
-    $error_messages = '';
 
-    if($is_allow){
-      $first_name = isset($form['first_name']) ? $form['first_name'] : NULL;
-      $first_name = trim($first_name);
-      $last_name = isset($form['last_name']) ? $form['last_name'] : NULL;
-      $last_name = trim($last_name);
-      $customer_note = isset($form['note']) ? $form['note'] : NULL;
-      $customer_note = trim($customer_note);
 
-      $shopify = new StaffsalesShopify();
-      $data = [
-        'customer' => [
-          'first_name' => $first_name,
-          'last_name' => $last_name,
-          'email' => $email,
-          'email_marketing_consent' => [
-            'state' => 'subscribed',
-            'opt_in_level' => 'confirmed_opt_in',
-            'consent_updated_at' => 'null'
-          ],
-          'note' => $customer_note,
-          'send_email_invite' => TRUE
-        ],
-      ];
+      $recaptcha_response = $form['gRecaptchaResponse'];
+      $secret_key = '6LdI6_4nAAAAAI9RQ8nruxFqi4iD7HhOpdW4-niu';
 
-      try {
-        $r = $shopify->post('customers', $data);
-        if($r->customer){
-          $success = TRUE;
-        }
-      } catch (ClientException $e) {
-        $error_messages = $this->getError($e);
+      $url = 'https://www.google.com/recaptcha/api/siteverify';
+      $data = array(
+          'secret' => $secret_key,
+          'response' => $recaptcha_response
+      );
+
+      $options = array(
+          'http' => array (
+              'method' => 'POST',
+              'content' => http_build_query($data),
+              'header' => 'Content-Type: application/x-www-form-urlencoded'
+          )
+      );
+
+      $context = stream_context_create($options);
+      $result = file_get_contents($url, false, $context);
+
+      $response = json_decode($result);
+
+      if ($response->success) {
+
+            $is_allow = $this->is_allow($email, $seasonal_enabled);
+            $success = FALSE;
+            $error_messages = '';
+
+            if($is_allow){
+              $first_name = isset($form['first_name']) ? $form['first_name'] : NULL;
+              $first_name = trim($first_name);
+              $last_name = isset($form['last_name']) ? $form['last_name'] : NULL;
+              $last_name = trim($last_name);
+              $customer_note = isset($form['note']) ? $form['note'] : NULL;
+              $customer_note = trim($customer_note);
+
+              $shopify = new StaffsalesShopify();
+              $data = [
+                'customer' => [
+                  'first_name' => $first_name,
+                  'last_name' => $last_name,
+                  'email' => $email,
+                  'email_marketing_consent' => [
+                    'state' => 'subscribed',
+                    'opt_in_level' => 'confirmed_opt_in'
+                  ],
+                  'note' => $customer_note,
+                  'send_email_invite' => TRUE
+                ],
+              ];
+
+              try {
+                $r = $shopify->post('customers', $data);
+                if($r->customer){
+                  $success = TRUE;
+                }
+              } catch (ClientException $e) {
+                $error_messages = $this->getError($e);
+              }
+            }
+
+            $data = [];
+            $data['is_allow'] = $is_allow;
+            $data['success'] = $success;
+            $data['errors'] = $error_messages;
+
+            return $this->noCacheResponse($data);
+
+      } else {
+
+          $data = [];
+          $data['is_allow'] = FALSE;
+          $data['success'] = FALSE;
+          $data['errors'] = 'reCAPTCHA failed';
+          return $this->noCacheResponse($data);
+
       }
-    }
-
-    $data = [];
-    $data['is_allow'] = $is_allow;
-    $data['success'] = $success;
-    $data['errors'] = $error_messages;
-
-    return $this->noCacheResponse($data);
   }
 
   private function op_verify_passcode($email, $passcode) {

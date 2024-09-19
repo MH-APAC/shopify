@@ -207,9 +207,9 @@ class QuotaAdminForm extends FormBase {
       $shopify = new StaffsalesShopify();
 
       foreach ($this->metafield_keys as $k => $v) {
-        $type = 'integer';
+        $type = 'number_integer';
         if($k == 'quota_overpurchase_email'){
-          $type = 'string';
+          $type = 'single_line_text_field';
         }
         $value = $form_state->getValue($k);
         $data = [
@@ -217,7 +217,7 @@ class QuotaAdminForm extends FormBase {
             'namespace' => 'staffsales',
             'key' => $k,
             'value' => $value,
-            'value_type' => $type,
+            'type' => $type,
           ],
         ];
         $shopify->post('metafields', $data);

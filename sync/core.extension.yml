@@ -1,0 +1,54 @@
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
+module:
+  admin_toolbar: 0
+  adminimal_admin_toolbar: 0
+  block: 0
+  breakpoint: 0
+  comment: 0
+  datetime: 0
+  dynamic_page_cache: 0
+  editor: 0
+  field: 0
+  file: 0
+  filter: 0
+  health_check: 0
+  image: 0
+  link: 0
+  log_stdout: 0
+  mailsystem: 0
+  mh_tools: 0
+  mysql: 0
+  node: 0
+  page_cache: 0
+  path_alias: 0
+  redis: 0
+  rest: 0
+  serialization: 0
+  shopify_api: 0
+  shortcut: 0
+  smtp: 0
+  staffsales_access: 0
+  staffsales_dashboard: 0
+  staffsales_domain: 0
+  staffsales_email: 0
+  staffsales_metafield: 0
+  staffsales_queue: 0
+  staffsales_rest: 0
+  staffsales_shopify: 0
+  swiftmailer: 0
+  syslog: 0
+  system: 0
+  text: 0
+  toolbar: 0
+  ultimate_cron: 0
+  update: 0
+  user: 0
+  standard: 1000
+theme:
+  stable: 0
+  classy: 0
+  seven: 0
+  staffsales: 0
+  adminimal_theme: 0
+profile: standard

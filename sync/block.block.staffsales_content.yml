@@ -1,0 +1,22 @@
+uuid: 81cf5688-2218-4dc6-944c-44133ffa5012
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - staffsales
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: staffsales_content
+theme: staffsales
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

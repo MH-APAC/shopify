@@ -1,0 +1,24 @@
+uuid: 1b1bb7ca-bde1-4459-9963-3477c3d5f2b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - serialization
+    - staffsales_rest
+_core:
+  default_config_hash: NKi991O97KlcH9ctcfBt0na-nccHkaqjaAZG2RiCWss
+id: order_rest_resource
+plugin_id: order_rest_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - staffsales_rest
+  POST:
+    supported_formats:
+      - json
+      - form
+    supported_auth:
+      - staffsales_rest

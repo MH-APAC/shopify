@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+theme: staffsales
+defaults:
+  sender: SMTPMailSystem
+  formatter: swiftmailer
+modules:
+  swiftmailer:
+    none:
+      sender: SMTPMailSystem
+      formatter: swiftmailer
