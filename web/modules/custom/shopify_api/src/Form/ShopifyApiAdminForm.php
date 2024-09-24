@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\shopify_api\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
@@ -7,19 +8,22 @@ use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Messenger;
 use Shopify;
 
-class ShopifyApiAdminForm extends ConfigFormBase {
+class ShopifyApiAdminForm extends ConfigFormBase
+{
 
   /**
    * {@inheritdoc}
    */
-  public function getFormID() {
+  public function getFormID()
+  {
     return 'shopify_api_admin_form';
   }
 
   /**
    * {@inheritdoc}
    */
-  protected function getEditableConfigNames() {
+  protected function getEditableConfigNames()
+  {
     return [
       'shopify_api.settings',
     ];
@@ -28,7 +32,8 @@ class ShopifyApiAdminForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state)
+  {
     \Drupal::moduleHandler()->loadInclude('shopify_api', 'install');
 
     $config = $this->config('shopify_api.settings');
@@ -91,7 +96,8 @@ class ShopifyApiAdminForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
+  public function validateForm(array &$form, FormStateInterface $form_state)
+  {
     try {
       $client = new Shopify\PrivateApp($form_state->getValue('domain'), $form_state->getValue('api_key'), $form_state->getValue('password'), $form_state->getValue('shared_secret'));
       $shop_info = $client->getShopInfo();
@@ -104,7 +110,8 @@ class ShopifyApiAdminForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  public function submitForm(array &$form, FormStateInterface $form_state)
+  {
     $this->config('shopify_api.settings')
       ->set('domain', $form_state->getValue('domain'))
       ->set('api_key', $form_state->getValue('api_key'))

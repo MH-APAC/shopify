@@ -6,7 +6,7 @@
     "require": {
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "drupal/shopify": "^1.0@alpha",
+        "mh_apac/shopify": "dev-master",
         "drupal/swiftmailer": "^2.2",
         "mh/drupal-core-package": "~1.1.0",
         "wikimedia/composer-merge-plugin": "^2.0"
@@ -38,7 +38,12 @@
         {
             "type": "vcs",
             "url": "git@gitlab.moet-hennessy.net:mhis/dynamic/agency/drupal-common/drupal-custom-modules.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:MH-APAC/shopify.git"
         }
+
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,

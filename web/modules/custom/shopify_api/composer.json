@@ -6,6 +6,6 @@
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
   "require": {
-    "donutdan4114/shopify": "dev-master"
+    "mh_apac/shopify": "dev-master"
   }
 }
