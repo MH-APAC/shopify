@@ -6,7 +6,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Messenger;
-use Shopify;
+use Shopify\PrivateApp;
 
 class ShopifyApiAdminForm extends ConfigFormBase
 {
@@ -99,9 +99,9 @@ class ShopifyApiAdminForm extends ConfigFormBase
   public function validateForm(array &$form, FormStateInterface $form_state)
   {
     try {
-      $client = new Shopify\PrivateApp($form_state->getValue('domain'), $form_state->getValue('api_key'), $form_state->getValue('password'), $form_state->getValue('shared_secret'));
+      $client = new PrivateApp($form_state->getValue('domain'), $form_state->getValue('api_key'), $form_state->getValue('password'), $form_state->getValue('shared_secret'));
       $shop_info = $client->getShopInfo();
-      \Drupal::messenger()->addMessage(t('Successfully connected to %store.', ['%store' => $shop_info->name]));
+      $thí->messenger()->addMessage(t('Successfully connected to %store.', ['%store' => $shop_info->name]));
     } catch (\Exception $e) {
       $form_state->setErrorByName(NULL, 'API Error: ' . $e->getMessage());
     }
