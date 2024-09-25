@@ -6,9 +6,9 @@
     "require": {
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "mh_apac/shopify": "dev-master",
         "drupal/swiftmailer": "^2.2",
         "mh/drupal-core-package": "~1.1.0",
+        "mh_apac/shopify": "dev-master",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "conflict": {
@@ -43,23 +43,22 @@
             "type": "vcs",
             "url": "git@github.com:MH-APAC/shopify.git"
         }
-
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {},
     "config": {
         "allow-plugins": {
-            "wikimedia/composer-merge-plugin": true,
             "composer/installers": true,
-            "drupal/core-project-message": true,
-            "drupal/core-composer-scaffold": true,
             "cweagans/composer-patches": true,
-            "simplesamlphp/composer-module-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "ergebnis/composer-normalize": true,
             "oomphinc/composer-installers-extender": true,
             "phpro/grumphp-shim": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "ergebnis/composer-normalize": true
+            "simplesamlphp/composer-module-installer": true,
+            "wikimedia/composer-merge-plugin": true
         },
         "bin-dir": "bin",
         "discard-changes": true,
